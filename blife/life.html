@@ -1,0 +1,109 @@
+<!-- 
+
+    Boundless Life (c) 2019 David Vulakh 
+    
+-->
+
+<html>
+    <head>
+        <title>ΔV Boundless Life</title>
+        
+		<!-- Sharing -->
+        <meta charset="utf-8" />
+        <meta name="theme-color" content="#000000">
+        <meta property="og:image" content="https://david.vulakh.us/blife/life.png" />
+        <meta property="og:title" content="ΔV Boundless Life" />
+        <meta property="og:description" content="Conway's Game of Life, Wireworld, Hex Life, and other cellular automata" />
+        
+		<!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/favicon/manifest.json">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-27309076-7"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-27309076-7');
+		</script>
+        
+		<!-- JQuery Menu -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script>
+        $( function() {
+           $( "#menu_html" ).load("blife/menu.html", function(){
+                $( "#menu" ).menu();
+                $( "#menu" ).menu( "option", "disabled", true );
+                <!-- Launch -->
+                life();
+            });
+        } );
+        </script>
+      
+        <style>
+        .ui-menu { font-family: Ubuntu; font-size: 0pt; white-space:nowrap; width: auto; position: absolute; top: 10%; left: -200% }
+        .ui-menu-item .ui-state-active, div:hover { background-color:white; border-color: white; color: black }
+        .ui-menu-item div { background-color:black; color: grey }
+        </style>
+        
+        <style>
+        ::selection { background: black; }
+        ::-moz-selection { background: black; }
+        </style>
+		
+    </head>
+
+    <body bgcolor=black>
+		<!-- Canvas -->
+        <canvas id="canvas" width=window.innerWidth height=window.innerHeight></canvas>
+        <style>
+            html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        </style>
+
+		<!-- Script -->
+        <script src=blife/life.js></script>
+        <script src=life.js></script>
+       
+        <div id="menu_html"></div>
+		
+		<!-- About -->
+		<style>
+		iframe.about {
+			opacity: 0.8;
+			background-color: black;
+			position: absolute;
+			top: 10%;
+			left: -200%;
+			overflow: auto;
+			height: 50%;
+			width: 50%;
+			z-index: -1;
+		}
+		<!--div.about:hover { background-color: black }-->
+		</style>
+		<iframe class="about" id="about" src = "blife/about.html"></iframe>
+		
+    </body>
+
+</html>
+
